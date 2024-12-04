@@ -54,9 +54,9 @@ print(cluster_means)
 def assign_cluster_labels(cluster_means):
     # Create fixed mapping for clusters based on known performance
     cluster_labels = {
-        2: 'Good',
-        0: 'Medium',
-        1: 'Poor'
+        1: 'Good',
+        2: 'Medium',
+        0: 'Poor'
     }
     return cluster_labels
 
@@ -110,6 +110,7 @@ standardized_means = pd.DataFrame(
     columns=cluster_means.columns,
     index=cluster_means.index
 )
+
 
 # Rename the index to use performance labels
 standardized_means.index = [cluster_labels[i] for i in standardized_means.index]
